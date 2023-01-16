@@ -14,7 +14,7 @@ const Application: React.FC = () => {
   const [lazyLoad, setLazyLoad] = useState(false);
 
   return (
-    <div id='erwt'>
+    <>
       <h1>Main App Component {uuidv4()}</h1>
       <button onClick={() => setLazyLoad(true)}>Load Dynamic Component</button>
       {lazyLoad && (
@@ -22,7 +22,7 @@ const Application: React.FC = () => {
           <DynamicComponent />
         </Suspense>
       )}
-    </div>
+    </>
   );
 };
 

@@ -4,12 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = [
   {
     // Typescript loader
-    test: /\.tsx?$/,
+    test: /\.(js|jsx|ts|tsx)$/,
     exclude: /(node_modules|\.webpack)/,
     use: {
-      loader: 'ts-loader',
+      loader: 'babel-loader',
       options: {
-        transpileOnly: true,
+        configFile: './tools/babel/.babelrc',
       },
     },
   },
