@@ -18,6 +18,7 @@ module.exports = {
   stats: 'errors-warnings',
   devtool: 'source-map',
   devServer: {
+    hot: true,
     open: true,
   },
   optimization: {

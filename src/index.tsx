@@ -1,11 +1,12 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 import Application from './components/Application';
+import { getLogger } from './utils/logger';
+import './index.css';
 
-console.log('[app] : Renderer execution started');
+const logger = getLogger('app');
 
-// Application to Render
-const app = <Application />;
+logger.log('renderer execution started');
 
-// Render application in DOM
-createRoot(document.getElementById('app')).render(app);
+const root = <Application />;
+
+createRoot(document.getElementById('root')).render(root);

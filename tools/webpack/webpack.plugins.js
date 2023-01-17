@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const { isDev } = require('./webpack.helpers');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,9 +7,9 @@ const BundleAnalyzerPlugin =
 
 module.exports = [
   new ForkTsCheckerWebpackPlugin(),
-  isDev() && new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({
     template: 'public/index.html',
+    favicon: 'public/React-icon.png',
     inject: true,
   }),
   new MiniCssExtractPlugin({
@@ -21,6 +20,7 @@ module.exports = [
     'process.env': JSON.stringify(process.env),
   }),
   new BundleAnalyzerPlugin({
-    analyzerMode: process.env.ANALYZE_BUNDLE ? 'server' : 'disabled',
+    analyzerMode: process.env.BUNDLE_ANALYZE ? 'server' : 'disabled',
+    analyzerPort: 8989,
   }),
 ].filter(Boolean);

@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = [
   {
-    // Typescript loader
+    // Typescript Loader
     test: /\.(js|jsx|ts|tsx)$/,
     exclude: /(node_modules|\.webpack)/,
     use: {
@@ -31,7 +31,7 @@ module.exports = [
     ],
   },
   {
-    // Less loader
+    // Less Loader
     test: /\.less$/,
     use: [
       { loader: isDev() ? 'style-loader' : MiniCssExtractPlugin.loader },
@@ -40,8 +40,9 @@ module.exports = [
     ],
   },
   {
+    //Assets Loader
     test: /\.(gif|jpe?g|tiff|png|webp|bmp|svg|eot|ttf|woff|woff2)$/i,
-    type: 'asset/resource',
+    type: 'asset',
     generator: {
       filename: 'assets/[hash][ext][query]',
     },

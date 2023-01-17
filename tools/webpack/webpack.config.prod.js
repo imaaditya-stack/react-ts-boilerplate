@@ -1,3 +1,6 @@
+require('dotenv').config();
+const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = {
   mode: 'production',
   entry: ['./src/index.tsx'],
@@ -13,13 +16,19 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
     alias: {
-      // Custom Aliases
       ...require('./webpack.aliases'),
     },
   },
   stats: 'errors-warnings',
   optimization: {
     minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          sourceMap: true,
+        },
+      }),
+    ],
     sideEffects: true,
     concatenateModules: true,
     runtimeChunk: 'single',
@@ -28,6 +37,11 @@ module.exports = {
       maxInitialRequests: 10,
       minSize: 0,
       cacheGroups: {
+        corejs: {
+          test: /core-js/,
+          name: 'corejs',
+          chunks: 'all',
+        },
         vendor: {
           name: 'vendors',
           test: /[\\/]node_modules[\\/]/,
