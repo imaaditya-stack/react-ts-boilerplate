@@ -4,9 +4,11 @@
     "es6": true,
     "node": true
   },
+  "plugins": ["prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/errors",
@@ -31,6 +33,7 @@
     }
   },
   "rules": {
+    "prettier/prettier": "error",
     "react/prop-types": "off",
     "@typescript-eslint/no-var-requires": "off",
     "react/jsx-uses-react": "off",
