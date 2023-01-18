@@ -5,7 +5,7 @@
 - 🔥 Hot Reloading.
 - Support for `TypeScript` usage.
 - Support for numerous assets loading.
-- Linting via `ESLint` and `Prettier` support.
+- Linting via `ESLint` and `Prettier`.
 - `Less`, `Scss`, `Sass`, `Css` stylesheet webpack loader.
 - Custom `@` webpack aliases for project use.
 - Separate `Webpack` configurations for `development` and `production` environments.
