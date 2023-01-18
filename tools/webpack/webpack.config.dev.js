@@ -1,4 +1,5 @@
 require('dotenv').config();
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -22,6 +23,14 @@ module.exports = {
     open: true,
   },
   optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          sourceMap: true,
+        },
+      }),
+    ],
     splitChunks: {
       chunks: 'all',
     },
