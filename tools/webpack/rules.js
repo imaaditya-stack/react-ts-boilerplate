@@ -1,4 +1,4 @@
-const { isDev } = require('./webpack.helpers');
+const { isDev } = require('./helpers');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = [
