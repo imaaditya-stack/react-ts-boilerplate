@@ -1,5 +1,6 @@
 require('dotenv').config();
 const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -26,6 +27,7 @@ module.exports = {
           sourceMap: true,
         },
       }),
+      new CssMinimizerPlugin(),
     ],
     sideEffects: true,
     concatenateModules: true,
