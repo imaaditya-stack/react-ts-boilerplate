@@ -2,7 +2,7 @@ import ReactLogo from '@assets/logo-og.png';
 
 const Application: React.FC = () => (
   <div id='app'>
-    <h1>React~Typescript~Webpack Starter Pack</h1>
+    <h1>React App</h1>
     <div id='logo'>
       <img src={ReactLogo} />
     </div>
